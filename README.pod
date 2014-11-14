@@ -1,0 +1,13 @@
+=head1 URI::Escape
+
+A Perl 6 module for escaping URIs
+
+=head2 Author
+
+David Farrell
+
+=head2 License
+
+FreeBSD - see LICENSE
+
+=cut
