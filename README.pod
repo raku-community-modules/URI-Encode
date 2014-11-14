@@ -1,6 +1,12 @@
 =head1 URI::Escape
 
-A Perl 6 module for escaping URIs
+A Perl 6 module for encoding URIs
+
+=head2 Synopsis
+
+    use URI::Escape;
+
+    my $encoded_uri = uri_escape('www.example.com/');
 
 =head2 Author
 
