@@ -1,9 +1,9 @@
 {
-    "name" : "URI::Escape",
+    "name" : "URI::Encode",
     "version" : "0.01",
-    "description" : "Encode and de-encode URIs according to RFC 3986",
+    "description" : "Encode and decode URIs according to RFC 3986",
     "author" : "David Farrell",
     "depends" : [ ],
-    "source-url" : "git://github.com/sillymoose/URI-Escape.git"
+    "source-url" : "git://github.com/sillymoose/URI-Encode.git"
 }
 
