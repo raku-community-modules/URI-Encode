@@ -5,7 +5,7 @@
     "author" : "David Farrell",
     "build-depends" : [ ],
     "test-depends" : [
-        "Test",
+        "Test"
     ],
     "depends" : [ ],
     "provides" : {
