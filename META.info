@@ -11,6 +11,6 @@
     "provides" : {
         "URI::Encode" : "lib/URI/Encode.pm6"
     },
-    "source-url" : "git://github.com/sillymoose/URI-Encode.git"
+    "source-url" : "git://github.com/dnmfarrell/URI-Encode.git"
 }
 
