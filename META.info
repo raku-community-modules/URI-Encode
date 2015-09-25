@@ -3,6 +3,10 @@
     "version" : "0.03",
     "description" : "Encode and decode URIs according to RFC 3986",
     "author" : "David Farrell",
+    "build-depends" : [ ],
+    "test-depends" : [
+      "Test"
+    ],
     "depends" : [ ],
     "provides" : {
       "URI::Encode" : "lib/Pod/Perl5.pm6"
