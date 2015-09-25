@@ -1,4 +1,4 @@
-module URI::Encode:ver<0.03>
+module URI::Encode:ver<0.04>
 {
     my $RFC3986_unreserved = /<[0..9A..Za..z\-.~]>/;
 
@@ -10,21 +10,25 @@ module URI::Encode:ver<0.03>
       %escapes{sprintf("%%%02X", $_)} = chr($_);
     }
 
-    sub uri_encode (Str:D $text is copy) is export
+    sub uri_encode (Str:D $text) is export
     {
-      my $scheme = '';
+      return $text.subst(/<[\x00..\xff]-[a..zA..Z0..9_.~\-\#\$\&\+,\/\:;\=\?@]>/, *.ord.fmt('%%%02X'), :g);
+    }
 
-      if $text ~~ s/^(https?\:\/\/)//
-      {
-        $scheme = $0;
-      }
-      return $scheme
-        ~ $text.subst(/<[\x00..\xff]-[a..zA..Z0..9_.~-]>/, *.ord.fmt('%%%02X'), :g);
+    sub uri_encode_component (Str:D $text) is export
+    {
+      return $text.subst(/<[\x00..\xff]-[a..zA..Z0..9_.~\-]>/, *.ord.fmt('%%%02X'), :g);
     }
 
     sub uri_decode (Str:D $text) is export
     {
       return $text.subst(/(\%<[0..9A..Fa..f]>** 2)/, { %escapes{$0} }, :g);
     }
+
+    sub uri_decode_component (Str:D $text) is export
+    {
+      return $text.subst(/(\%<[0..9A..Fa..f]>** 2)/, { %escapes{$0} }, :g);
+    }
 }
+
 # vim: ft=perl6
