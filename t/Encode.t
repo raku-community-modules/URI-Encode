@@ -3,7 +3,7 @@ use Test;
 use lib './lib';
 use URI::Encode;
 
-plan 16;
+plan 18;
 
 # encode
 is uri_encode("  "),    "%20%20",       'Encode "   "';
@@ -11,11 +11,13 @@ is uri_encode("|abcå"), "%7Cabc%E5",    'Encode "|abcå"';
 is uri_encode("abc"),   "abc",          'Encode "abc"';
 is uri_encode("~*'()"), "~%2A%27%28%29",'Encode "~*\'()"';
 is uri_encode("<\">"),  "%3C%22%3E",    'Encode "<\"';
+is uri_encode("Hello World!"), "Hello%20World!", 'Encode "Hello World!"';
 is uri_encode("http://perltricks.com/"),  "http://perltricks.com/",
   'Encode "http://perltricks.com/"';
 is uri_encode("https://perltricks.com/"), "https://perltricks.com/",
   'Encode "https://perltricks.com/"';
 
+is uri_encode_component("Hello World!"), "Hello%20World%21", 'Encode components "Hello World!"';
 is uri_encode_component('#$&+,/:;=?@'), '%23%24%26%2B%2C%2F%3A%3B%3D%3F%40',
   'Encode components \'#$&+,/:;=?@\'';
 

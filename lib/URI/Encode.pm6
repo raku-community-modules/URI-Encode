@@ -12,7 +12,7 @@ module URI::Encode:ver<0.04>
 
     sub uri_encode (Str:D $text) is export
     {
-      return $text.subst(/<[\x00..\xff]-[a..zA..Z0..9_.~\-\#\$\&\+,\/\:;\=\?@]>/, *.ord.fmt('%%%02X'), :g);
+      return $text.subst(/<[\x00..\xff]-[a..zA..Z0..9_.~\!\+\-\#\$\&\+,\/\:;\=\?@]>/, *.ord.fmt('%%%02X'), :g);
     }
 
     sub uri_encode_component (Str:D $text) is export
