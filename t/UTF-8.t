@@ -25,6 +25,8 @@ my @tests = (
 for @tests -> $test {
     is uri_encode($test<in>), $test<out>, "uri_encode correctly deals with '{ $test<in> }'";
     is uri_encode_component($test<in>), $test<out>, "uri_encode_component correctly deals with '{ $test<in> }'";
+    is uri_decode($test<out>), $test<in>, "uri_decode correctly deals with '{ $test<in> }'";
+    is uri_decode_component($test<out>), $test<in>, "uri_decode_component correctly deals with '{ $test<in> }'";
 }
 
 
