@@ -10,14 +10,18 @@ module URI::Encode:ver<0.04>
       %escapes{sprintf("%%%02X", $_)} = chr($_);
     }
 
+    my &enc = sub ($m) {
+        $m.Str.encode.list.map({.fmt('%%%02X')}).join('')
+    }
+
     sub uri_encode (Str:D $text) is export
     {
-      return $text.subst(/<[\x00..\x10ffff]-[a..zA..Z0..9_.~\!\+\-\#\$\&\+,\/\:;\=\?@]>/, *.Str.encode.list.map({.fmt('%%%02X')}).join(''), :g);
+      return $text.subst(/<[\x00..\x10ffff]-[a..zA..Z0..9_.~\!\+\-\#\$\&\+,\/\:;\=\?@]>/, &enc, :g);
     }
 
     sub uri_encode_component (Str:D $text) is export
     {
-      return $text.subst(/<[\x00..\x10ffff]-[a..zA..Z0..9_.~\-]>/, *.Str.encode.list.map({.fmt('%%%02X')}).join(''), :g);
+      return $text.subst(/<[\x00..\x10ffff]-[a..zA..Z0..9_.~\-]>/, &enc, :g);
     }
 
     my &dec = sub ($m) {
