@@ -20,14 +20,18 @@ module URI::Encode:ver<0.04>
       return $text.subst(/<[\x00..\x10ffff]-[a..zA..Z0..9_.~\-]>/, *.Str.encode.list.map({.fmt('%%%02X')}).join(''), :g);
     }
 
+    my &dec = sub ($m) {
+        Buf.new($m<bit>.list.map({:16($_.Str)})).decode;
+    }
+
     sub uri_decode (Str:D $text) is export
     {
-      return $text.subst(/(\%<[0..9A..Fa..f]>** 2)/, { %escapes{$0} }, :g);
+      return $text.subst(/[\%$<bit>=[<[0..9A..Fa..f]>** 2]]+/, &dec, :g);
     }
 
     sub uri_decode_component (Str:D $text) is export
     {
-      return $text.subst(/(\%<[0..9A..Fa..f]>** 2)/, { %escapes{$0} }, :g);
+      return $text.subst(/[\%$<bit>=[<[0..9A..Fa..f]>** 2]]+/, &dec, :g);
     }
 }
 
