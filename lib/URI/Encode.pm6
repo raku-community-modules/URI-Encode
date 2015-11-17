@@ -1,4 +1,4 @@
-module URI::Encode:ver<0.04>
+module URI::Encode:ver<0.05>
 {
     my $RFC3986_unreserved = /<[0..9A..Za..z\-.~]>/;
 
