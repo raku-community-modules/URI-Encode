@@ -12,12 +12,12 @@ module URI::Encode:ver<0.04>
 
     sub uri_encode (Str:D $text) is export
     {
-      return $text.subst(/<[\x00..\xff]-[a..zA..Z0..9_.~\!\+\-\#\$\&\+,\/\:;\=\?@]>/, *.ord.fmt('%%%02X'), :g);
+      return $text.subst(/<[\x00..\x10ffff]-[a..zA..Z0..9_.~\!\+\-\#\$\&\+,\/\:;\=\?@]>/, *.Str.encode.list.map({.fmt('%%%02X')}).join(''), :g);
     }
 
     sub uri_encode_component (Str:D $text) is export
     {
-      return $text.subst(/<[\x00..\xff]-[a..zA..Z0..9_.~\-]>/, *.ord.fmt('%%%02X'), :g);
+      return $text.subst(/<[\x00..\x10ffff]-[a..zA..Z0..9_.~\-]>/, *.Str.encode.list.map({.fmt('%%%02X')}).join(''), :g);
     }
 
     sub uri_decode (Str:D $text) is export
