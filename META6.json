@@ -16,6 +16,6 @@
     "source-url" : "git://github.com/perl6-community-modules/URI-Encode.git",
     "support": {
       "source": "git@github.com:perl6-community-modules/URI-Encode.git",
-      "bugtracker": "https://github.com/briandfoy/URI-Encode/issues"
+      "bugtracker": "https://github.com/perl6-community-modules/URI-Encode/issues"
     }
 }
