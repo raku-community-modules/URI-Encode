@@ -1,6 +1,6 @@
 module URI::Encode:ver<0.05>
 {
-    my $RFC3986_unreserved = /<[0..9A..Za..z\-.~]>/;
+    my $RFC3986_unreserved = rx/<[0..9A..Za..z\-.~_]>/;
 
     my %escapes;
     for (0..255) {
