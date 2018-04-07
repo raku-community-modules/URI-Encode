@@ -3,13 +3,14 @@ use Test;
 use lib './lib';
 use URI::Encode;
 
-plan 22;
+plan 23;
 
 # encode
 is uri_encode("  "),    "%20%20",       'Encode "   "';
 is uri_encode("|abcå"), "%7Cabc%C3%A5",    'Encode "|abcå"';
+is uri_encode("-.~_"), "-.~_",    'Encode -.~_';
+is uri_encode(":/?#\[\]@!\$\&'()*+,;="), ":/?#\[\]@!\$\&'()*+,;=",    'Encode :/?#\[\]@!$&\'()*+,;=';
 is uri_encode("abc"),   "abc",          'Encode "abc"';
-is uri_encode("~*'()"), "~%2A%27%28%29",'Encode "~*\'()"';
 is uri_encode("<\">"),  "%3C%22%3E",    'Encode "<\"';
 is uri_encode("Hello World!"), "Hello%20World!", 'Encode "Hello World!"';
 is uri_encode("http://perltricks.com/"),  "http://perltricks.com/",
