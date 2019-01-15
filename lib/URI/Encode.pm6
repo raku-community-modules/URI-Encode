@@ -1,3 +1,5 @@
+use v6.c;
+
 module URI::Encode:ver<0.05>
 {
     my $RFC3986_unreserved = rx/<[0..9A..Za..z\-.~_]>/;
@@ -17,12 +19,12 @@ module URI::Encode:ver<0.05>
 
     sub uri_encode (Str:D $text) is export
     {
-      return $text.comb.map({ if $RFC3986_unreserved or $RFC3986_reserved { $_ } else { &enc($_) }}).join;
+      return $text.comb.map({ if /$RFC3986_unreserved/ or /$RFC3986_reserved/ { $_ } else { &enc($_) }}).join;
     }
 
     sub uri_encode_component (Str:D $text) is export
     {
-      return $text.comb.map({ if $RFC3986_unreserved { $_ } else { &enc($_) }}).join;
+      return $text.comb.map({ if /$RFC3986_unreserved/ { $_ } else { &enc($_) }}).join;
     }
 
     my &dec = sub ($m) {
