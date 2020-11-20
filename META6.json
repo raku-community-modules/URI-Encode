@@ -13,9 +13,9 @@
       "URI::Encode" : "lib/URI/Encode.pm6"
     },
     "source-type" : "git",
-    "source-url" : "git://github.com/perl6-community-modules/URI-Encode.git",
+    "source-url" : "git://github.com/raku-community-modules/URI-Encode.git",
     "support": {
-      "source": "git@github.com:perl6-community-modules/URI-Encode.git",
-      "bugtracker": "https://github.com/perl6-community-modules/URI-Encode/issues"
+      "source": "git@github.com:raku-community-modules/URI-Encode.git",
+      "bugtracker": "https://github.com/raku-community-modules/URI-Encode/issues"
     }
 }
