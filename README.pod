@@ -1,6 +1,6 @@
 =head1 URI::Encode
 
-A Perl 6 module for encoding / decoding URIs
+A Raku module for encoding / decoding URIs
 
 =head1 Synopsis
 
