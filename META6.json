@@ -3,8 +3,8 @@
     "name" : "URI::Encode",
     "version" : "0.08",
     "description" : "Encode and decode URIs according to RFC 3986",
-    "authors" : [ "David Farrell" ],
-    "build-depends" : [ ],
+    "authors" : [ "David Farrell", "Raku community" ],
+    "auth": "zef:raku-community-modules",
     "test-depends" : [
       "Test"
     ],
