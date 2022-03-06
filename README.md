@@ -1,8 +1,8 @@
-=head1 URI::Encode
+# URI::Encode [![Tests on source](https://github.com/raku-community-modules/URI-Encode/actions/workflows/test.yaml/badge.svg)](https://github.com/raku-community-modules/URI-Encode/actions/workflows/test.yaml)
 
 A Raku module for encoding / decoding URIs
 
-=head1 Synopsis
+# Synopsis
 
     use URI::Encode;
 
@@ -18,12 +18,11 @@ A Raku module for encoding / decoding URIs
     # provided for symmetry, is the same as uri_decode()
     my $decoded_component = uri_decode_component('some%20text%2Fto%20%2B%20safely');
 
-=head1 Author
+## Author
 
-David Farrell E<copy> 2015
+David Farrell, 2015; lately maintained by the Raku community adoption center.
 
-=head1 License
+## License
 
-FreeBSD - see LICENSE
+FreeBSD - see [LICENSE](LICENSE)
 
-=cut
