@@ -18,6 +18,11 @@ A Raku module for encoding / decoding URIs
     # provided for symmetry, is the same as uri_decode()
     my $decoded_component = uri_decode_component('some%20text%2Fto%20%2B%20safely');
 
+## See also
+
+[URI](https://raku.land/github:raku-community-modules/URI) is another
+ implementation that covers this area, including encoding and decoding of URIs.
+
 ## Author
 
 David Farrell, 2015; lately maintained by the Raku community adoption center.
