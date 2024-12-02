@@ -1,6 +1,8 @@
 Revision history for URI::Encode
 
 {{$NEXT}}
+
+0.1  2024-12-02T16:20:19+01:00
     - Use modern file extensions
     - Add seperate CI badges for each OS
     - Some code modernization
