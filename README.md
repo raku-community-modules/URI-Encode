@@ -1,33 +1,58 @@
-# URI::Encode [![Tests on source](https://github.com/raku-community-modules/URI-Encode/actions/workflows/test.yaml/badge.svg)](https://github.com/raku-community-modules/URI-Encode/actions/workflows/test.yaml)
+[![Actions Status](https://github.com/raku-community-modules/URI-Encode/actions/workflows/linux.yml/badge.svg)](https://github.com/raku-community-modules/URI-Encode/actions) [![Actions Status](https://github.com/raku-community-modules/URI-Encode/actions/workflows/macos.yml/badge.svg)](https://github.com/raku-community-modules/URI-Encode/actions) [![Actions Status](https://github.com/raku-community-modules/URI-Encode/actions/workflows/windows.yml/badge.svg)](https://github.com/raku-community-modules/URI-Encode/actions)
 
-A Raku module for encoding / decoding URIs
+NAME
+====
 
-# Synopsis
+URI::Encode - a Raku module for encoding / decoding URIs
 
-    use URI::Encode;
+SYNOPSIS
+========
 
-    # for encoding whole URIs, ignores reserved chars: :/?#[]@!$&'()*+,;=
-    my $encoded_uri = uri_encode('http://www.example.com/?name=john doe&age=54');
+```raku
+use URI::Encode;
 
-    # encode every reserved char
-    my $encoded_uri_component = uri_encode_component('some text/to encode+ safely');
+# for encoding whole URIs, ignores reserved chars: :/?#[]@!$&'()*+,;=
+my $encoded_uri = uri_encode('http://www.example.com/?name=john doe&age=54');
 
-    # remove percent encoding
-    my $decoded_uri = uri_decode('http://www.example.com/?name=john%20doe&age=54');
+# encode every reserved char
+my $encoded_uri_component = uri_encode_component('some text/to encode+ safely');
 
-    # provided for symmetry, is the same as uri_decode()
-    my $decoded_component = uri_decode_component('some%20text%2Fto%20%2B%20safely');
+# remove percent encoding
+my $decoded_uri = uri_decode('http://www.example.com/?name=john%20doe&age=54');
 
-## See also
+# provided for symmetry, is the same as uri_decode()
+my $decoded_component = uri_decode_component('some%20text%2Fto%20%2B%20safely');
+```
 
-[URI](https://raku.land/github:raku-community-modules/URI) is another
- implementation that covers this area, including encoding and decoding of URIs.
+DESCRIPTION
+===========
 
-## Author
+URI::Encode is a module that exports four subroutines:
 
-David Farrell, 2015; lately maintained by the Raku community adoption center.
+  * uri_encode - encode a whole URI
 
-## License
+  * uri_encode_component - encode every reserved char
 
-FreeBSD - see [LICENSE](LICENSE)
+  * uri_decode - decode a whole URI
+
+  * uri_decode_component - decode every reserved char
+
+SEE ALSo
+========
+
+[`URI`](https://raku.land/github:raku-community-modules/URI) is another implementation that covers this area, including encoding and decoding of URIs.
+
+AUTHOR
+======
+
+David Farrell
+
+COPYRIGHT AND LICENSE
+=====================
+
+Copyright 2014 - 2015 David Farrell
+
+Copyright 2016 - 2024 Raku Community
+
+This library is free software; you can redistribute it and/or modify it under the FreeBSD license.
 

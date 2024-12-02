@@ -1,6 +1,4 @@
-#!/usr/bin/env perl6
 use Test;
-use lib './lib';
 use URI::Encode;
 
 plan 23;
@@ -41,4 +39,4 @@ is uri_decode_component('%23%24%26%2B%2C%2F%3A%3B%3D%3F%40'), '#$&+,/:;=?@',
   'Decode components to \'#$&+,/:;=?@\'';
 is uri_decode_component("%F0%9F%87%A9%F0%9F%87%AA"), "🇩🇪", 'Decode components "🇩🇪"';
 
-# vim: ft=perl6
+# vim: expandtab shiftwidth=4

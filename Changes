@@ -1,0 +1,7 @@
+Revision history for URI::Encode
+
+{{$NEXT}}
+    - Use modern file extensions
+    - Add seperate CI badges for each OS
+    - Some code modernization
+    - Initial version using App::Mi6 release logic

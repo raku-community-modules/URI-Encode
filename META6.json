@@ -1,20 +1,26 @@
 {
-    "perl" : "6.*",
-    "name" : "URI::Encode",
-    "version" : "0.09",
-    "description" : "Encode and decode URIs according to RFC 3986",
-    "authors" : [ "David Farrell", "Raku community" ],
-    "auth": "zef:raku-community-modules",
-    "test-depends" : [
-      "Test"
-    ],
-    "depends" : [ ],
-    "provides" : {
-      "URI::Encode" : "lib/URI/Encode.pm6"
-    },
-    "source-url" : "https://github.com/raku-community-modules/URI-Encode",
-    "support": {
-      "source": "git@github.com:raku-community-modules/URI-Encode.git",
-      "bugtracker": "https://github.com/raku-community-modules/URI-Encode/issues"
-    }
+  "auth": "zef:raku-community-modules",
+  "authors": [
+    "David Farrell",
+    "Raku community"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "a Raku module for encoding / decoding URIs",
+  "license": "FreeBSD",
+  "name": "URI::Encode",
+  "perl": "6.*",
+  "provides": {
+    "URI::Encode": "lib/URI/Encode.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/raku-community-modules/URI-Encode.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.09"
 }
