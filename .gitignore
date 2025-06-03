@@ -1,2 +1,3 @@
-.precomp
-.idea
+.precomp/
+/URI-Encode-*
+*.rakucov

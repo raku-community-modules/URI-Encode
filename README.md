@@ -52,7 +52,7 @@ COPYRIGHT AND LICENSE
 
 Copyright 2014 - 2015 David Farrell
 
-Copyright 2016 - 2024 Raku Community
+Copyright 2016 - 2025 Raku Community
 
 This library is free software; you can redistribute it and/or modify it under the FreeBSD license.
 
