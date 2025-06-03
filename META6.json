@@ -9,7 +9,7 @@
   "depends": [
   ],
   "description": "a Raku module for encoding / decoding URIs",
-  "license": "FreeBSD",
+  "license": "BSD-2-Clause-FreeBSD",
   "name": "URI::Encode",
   "perl": "6.*",
   "provides": {
