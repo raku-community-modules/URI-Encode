@@ -1,8 +1,11 @@
 Revision history for URI::Encode
 
 {{$NEXT}}
+
+1.0  2025-06-03T14:28:21+02:00
     - Use supported SPDX license info, JRaspass++
     - Update copyright year
+    - Bump version to 1.0 to avoid confusion
 
 0.1  2024-12-02T16:20:19+01:00
     - Use modern file extensions
